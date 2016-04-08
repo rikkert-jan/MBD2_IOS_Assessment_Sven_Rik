@@ -7,14 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D70DF2D31CB7CD7D00F00D1F /* PokemonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70DF2D21CB7CD7D00F00D1F /* PokemonViewController.swift */; };
 		D73E1F7E1CB6E506008BBB7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73E1F7D1CB6E506008BBB7E /* AppDelegate.swift */; };
 		D73E1F801CB6E506008BBB7E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73E1F7F1CB6E506008BBB7E /* ViewController.swift */; };
 		D73E1F831CB6E506008BBB7E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D73E1F811CB6E506008BBB7E /* Main.storyboard */; };
 		D73E1F851CB6E506008BBB7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D73E1F841CB6E506008BBB7E /* Assets.xcassets */; };
 		D73E1F881CB6E506008BBB7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D73E1F861CB6E506008BBB7E /* LaunchScreen.storyboard */; };
+		D73E1F901CB6E542008BBB7E /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73E1F8F1CB6E542008BBB7E /* Pokemon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D70DF2D21CB7CD7D00F00D1F /* PokemonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonViewController.swift; sourceTree = "<group>"; };
 		D73E1F7A1CB6E506008BBB7E /* MBD2_Asessment_Sven_Rik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MBD2_Asessment_Sven_Rik.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D73E1F7D1CB6E506008BBB7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D73E1F7F1CB6E506008BBB7E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		D73E1F841CB6E506008BBB7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D73E1F871CB6E506008BBB7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D73E1F891CB6E506008BBB7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D73E1F8F1CB6E542008BBB7E /* Pokemon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 				D73E1F841CB6E506008BBB7E /* Assets.xcassets */,
 				D73E1F861CB6E506008BBB7E /* LaunchScreen.storyboard */,
 				D73E1F891CB6E506008BBB7E /* Info.plist */,
+				D73E1F8F1CB6E542008BBB7E /* Pokemon.swift */,
+				D70DF2D21CB7CD7D00F00D1F /* PokemonViewController.swift */,
 			);
 			path = MBD2_Asessment_Sven_Rik;
 			sourceTree = "<group>";
@@ -96,6 +102,7 @@
 				TargetAttributes = {
 					D73E1F791CB6E506008BBB7E = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = CPWDT5JD28;
 					};
 				};
 			};
@@ -137,6 +144,8 @@
 			files = (
 				D73E1F801CB6E506008BBB7E /* ViewController.swift in Sources */,
 				D73E1F7E1CB6E506008BBB7E /* AppDelegate.swift in Sources */,
+				D70DF2D31CB7CD7D00F00D1F /* PokemonViewController.swift in Sources */,
+				D73E1F901CB6E542008BBB7E /* Pokemon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,10 +256,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MBD2_Asessment_Sven_Rik/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "avans.MBD2-Asessment-Sven-Rik";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -258,10 +270,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MBD2_Asessment_Sven_Rik/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "avans.MBD2-Asessment-Sven-Rik";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -284,6 +299,7 @@
 				D73E1F8E1CB6E506008BBB7E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
