@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D70DF2D31CB7CD7D00F00D1F /* PokemonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70DF2D21CB7CD7D00F00D1F /* PokemonViewController.swift */; };
+		D70DF2D71CB8173900F00D1F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70DF2D61CB8173900F00D1F /* SettingsViewController.swift */; };
 		D73E1F7E1CB6E506008BBB7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73E1F7D1CB6E506008BBB7E /* AppDelegate.swift */; };
 		D73E1F801CB6E506008BBB7E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73E1F7F1CB6E506008BBB7E /* ViewController.swift */; };
 		D73E1F831CB6E506008BBB7E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D73E1F811CB6E506008BBB7E /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		D70DF2D21CB7CD7D00F00D1F /* PokemonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonViewController.swift; sourceTree = "<group>"; };
+		D70DF2D61CB8173900F00D1F /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		D73E1F7A1CB6E506008BBB7E /* MBD2_Asessment_Sven_Rik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MBD2_Asessment_Sven_Rik.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D73E1F7D1CB6E506008BBB7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D73E1F7F1CB6E506008BBB7E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 				D73E1F7D1CB6E506008BBB7E /* AppDelegate.swift */,
 				D73E1F7F1CB6E506008BBB7E /* ViewController.swift */,
 				D73E1F811CB6E506008BBB7E /* Main.storyboard */,
+				D70DF2D61CB8173900F00D1F /* SettingsViewController.swift */,
 				D73E1F841CB6E506008BBB7E /* Assets.xcassets */,
 				D73E1F861CB6E506008BBB7E /* LaunchScreen.storyboard */,
 				D73E1F891CB6E506008BBB7E /* Info.plist */,
@@ -145,6 +148,7 @@
 				D73E1F801CB6E506008BBB7E /* ViewController.swift in Sources */,
 				D73E1F7E1CB6E506008BBB7E /* AppDelegate.swift in Sources */,
 				D70DF2D31CB7CD7D00F00D1F /* PokemonViewController.swift in Sources */,
+				D70DF2D71CB8173900F00D1F /* SettingsViewController.swift in Sources */,
 				D73E1F901CB6E542008BBB7E /* Pokemon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -5,6 +5,93 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
+        <!--SettingsViewController-->
+        <scene sceneID="eov-B7-xJR">
+            <objects>
+                <viewController storyboardIdentifier="SettingsViewController" title="SettingsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="s4m-GQ-e56" customClass="SettingsViewController" customModule="MBD2_Asessment_Sven_Rik" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LWf-1Z-I7H"/>
+                        <viewControllerLayoutGuide type="bottom" id="HOf-Uy-LZ2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="g0G-si-YrS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Show Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qps-c2-ags">
+                                <rect key="frame" x="20" y="114" width="189" height="26"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Show Height:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AgG-OO-ogF">
+                                <rect key="frame" x="20" y="152" width="189" height="26"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Show Weight:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rDG-KI-OAa">
+                                <rect key="frame" x="20" y="191" width="189" height="26"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Show Exp.:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="22i-6u-i1P">
+                                <rect key="frame" x="20" y="230" width="189" height="26"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LGE-ml-7aW">
+                                <rect key="frame" x="160" y="227" width="51" height="31"/>
+                                <connections>
+                                    <action selector="experienceSwitchChanged:" destination="s4m-GQ-e56" eventType="valueChanged" id="XZw-dX-aV1"/>
+                                </connections>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YyV-jR-lCs">
+                                <rect key="frame" x="160" y="188" width="51" height="31"/>
+                                <connections>
+                                    <action selector="weightSwitchChanged:" destination="s4m-GQ-e56" eventType="valueChanged" id="NRN-0z-uhp"/>
+                                </connections>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D4b-lU-nfV">
+                                <rect key="frame" x="160" y="72" width="51" height="31"/>
+                                <connections>
+                                    <action selector="idSwitchChanged:" destination="s4m-GQ-e56" eventType="valueChanged" id="QDc-Xm-dqo"/>
+                                </connections>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="55i-By-pgu">
+                                <rect key="frame" x="160" y="111" width="51" height="31"/>
+                                <connections>
+                                    <action selector="nameSwitchChanged:" destination="s4m-GQ-e56" eventType="valueChanged" id="tYW-L9-6WI"/>
+                                </connections>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sjY-b6-Kgs">
+                                <rect key="frame" x="160" y="149" width="51" height="31"/>
+                                <connections>
+                                    <action selector="heightSwitchChanged:" destination="s4m-GQ-e56" eventType="valueChanged" id="aMn-ZX-jkB"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Show Id:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IAw-Gf-RIA">
+                                <rect key="frame" x="20" y="77" width="189" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="experienceSwitch" destination="LGE-ml-7aW" id="vzt-vA-wZi"/>
+                        <outlet property="heightSwitch" destination="sjY-b6-Kgs" id="0p0-eW-epk"/>
+                        <outlet property="idSwitch" destination="D4b-lU-nfV" id="ej6-Hb-Day"/>
+                        <outlet property="nameSwitch" destination="55i-By-pgu" id="Jmq-5k-paq"/>
+                        <outlet property="weightSwitch" destination="YyV-jR-lCs" id="xCs-9m-8CQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MSn-u8-tnh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2000" y="616"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -47,9 +134,21 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="NA6-pd-Mu8"/>
+                    <navigationItem key="navigationItem" id="NA6-pd-Mu8">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="GFw-Md-cpp">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="kDm-mO-Ydu">
+                                <rect key="frame" x="447" y="7" width="133" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Settings"/>
+                                <connections>
+                                    <action selector="settingsTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A2R-lr-t6X"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="Qh3-Q7-8xk" id="01a-pd-Jht"/>
+                        <segue destination="s4m-GQ-e56" kind="show" identifier="ShowSettingsSegue" id="Aiw-z0-9NS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -153,7 +252,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CPW-XH-wTO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1836" y="315"/>
+            <point key="canvasLocation" x="2012" y="-269"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mAf-1L-mbS">

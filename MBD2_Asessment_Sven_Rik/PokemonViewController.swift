@@ -17,6 +17,8 @@ class PokemonViewController: UIViewController {
     @IBOutlet weak var pokemonHeightLabel: UILabel!
     @IBOutlet weak var pokemonNameLabel: UILabel!
     
+    let defaults = NSUserDefaults.standardUserDefaults()
+    
     var id = String();
     var name = String();
     var sprite = String();
@@ -44,7 +46,24 @@ class PokemonViewController: UIViewController {
     
     @IBAction func sendDataTapped(sender : AnyObject) {
         print("you tapped ze button")
-        let urlString = "Data generated with pokemon app for pokemon \(self.name); \n ID: \(self.id) \n Name: \(self.name) \n Height: \(self.height) \n Weight: \(self.weight) \n Exp.: \(self.experience) \n"
+        var urlString = "Data generated with pokemon app for pokemon \(self.name); \n"
+        
+        if(defaults.boolForKey("showId")){
+            urlString+=" ID: \(self.id) \n"
+        }
+        if(defaults.boolForKey("showName")){
+            urlString+=" Name: \(self.name) \n"
+        }
+        if(defaults.boolForKey("showHeight")){
+            urlString+=" Height: \(self.height)"
+        }
+        if(defaults.boolForKey("showWeight")){
+            urlString+=" Weight: \(self.weight) \n"
+        }
+        if(defaults.boolForKey("showExperience")){
+            urlString+=" Exp.: \(self.experience) \n"
+        }
+        
         let urlStringEncoded = urlString.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())
         let url  = NSURL(string: "whatsapp://send?text=\(urlStringEncoded!)")
         

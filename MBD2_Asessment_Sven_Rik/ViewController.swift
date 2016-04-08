@@ -14,6 +14,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     let textCellIdentifier = "TextCell"
     let pokemonSegueIdentifier = "ShowPokemonSegue"
+    let settingSegueIdentifier = "ShowSettingsSegue"
     
     var pokemons: [Pokemon] = []
     
@@ -40,10 +41,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                     destination.experience = String(pokemonToShow.base_exp)
                     destination.sprite = pokemonToShow.sprite;
                 }
-                //print(destination)
             }
         }
     }
+    
     
     // UITextFieldDelegate Methods
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -89,7 +90,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     // Fetches a list of pokemons from tha interwebz
     func gottaCatchEmAll(){
-        let requestURL: NSURL = NSURL(string: "http://pokeapi.co/api/v2/pokemon?limit=5")!
+        let requestURL: NSURL = NSURL(string: "http://pokeapi.co/api/v2/pokemon?limit=30")!
         let urlRequest: NSMutableURLRequest = NSMutableURLRequest(URL: requestURL)
         let session = NSURLSession.sharedSession()
         let task = session.dataTaskWithRequest(urlRequest) {
@@ -170,6 +171,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
         // Start de task
         task.resume()
+    }
+    
+    @IBAction func settingsTapped(sender : AnyObject) {
+        //let vc = self.storyboard?.instantiateViewControllerWithIdentifier("SettingsViewController") as! SettingsViewController
+        //let navigationController = UINavigationController(rootViewController: vc)
+        //self.presentViewController(navigationController, animated: true, completion: nil)
+
+        self.performSegueWithIdentifier(settingSegueIdentifier, sender: self)
     }
     
 }
