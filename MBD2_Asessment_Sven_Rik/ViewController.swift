@@ -88,12 +88,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     // Vangt alle pokemon, om ze zo te kunnen onderzoeken!
     func gottaCatchEmAll(offSet:Int){
-        let max = 150;
-        /*
-            5 per step werkt redelijk soepel, lichte hapering
-            3 per step werkt beter
-        */
-        let step = 3;
+        let max = 30;
+        let step = 5;
         let offset = 0 + offSet;
         
         // Voer dit alleen uit als er nog geen X aantal pokemon "gevangen" zijn
