@@ -90,7 +90,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     // Fetches a list of pokemons from tha interwebz
     func gottaCatchEmAll(offSet:Int){
-        let max = 9;
+        let max = 150;
         /*
             5 per step werkt redelijk soepel, lichte hapering
             3 per step werkt beter
