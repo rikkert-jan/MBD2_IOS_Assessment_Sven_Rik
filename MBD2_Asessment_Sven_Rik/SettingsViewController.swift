@@ -23,6 +23,7 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
     }
     
+    // De switches moeten wel goed staan wanneer je op de pagina komt he...
     override func viewWillAppear(animated: Bool) {
         self.navigationItem.title = "Settings"
         
@@ -60,38 +61,37 @@ class SettingsViewController: UIViewController {
         }else{
             defaults.setBool(true, forKey: "showId")
         }
-        print(defaults.boolForKey("showId"))
     }
+    
     @IBAction func nameSwitchChanged(sender : AnyObject) {
         if(defaults.boolForKey("showName")){
             defaults.setBool(false, forKey: "showName")
         }else{
             defaults.setBool(true, forKey: "showName")
         }
-        print(defaults.boolForKey("showName"))
     }
+    
     @IBAction func heightSwitchChanged(sender : AnyObject) {
         if(defaults.boolForKey("showHeight")){
             defaults.setBool(false, forKey: "showHeight")
         }else{
             defaults.setBool(true, forKey: "showHeight")
         }
-        print(defaults.boolForKey("showHeight"))
     }
+    
     @IBAction func weightSwitchChanged(sender : AnyObject) {
         if(defaults.boolForKey("showWeight")){
             defaults.setBool(false, forKey: "showWeight")
         }else{
             defaults.setBool(true, forKey: "showWeight")
         }
-        print(defaults.boolForKey("showWeight"))
     }
+    
     @IBAction func experienceSwitchChanged(sender : AnyObject) {
         if(defaults.boolForKey("showExperience")){
             defaults.setBool(false, forKey: "showExperience")
         }else{
             defaults.setBool(true, forKey: "showExperience")
         }
-        print(defaults.boolForKey("showExperience"))
     }
 }

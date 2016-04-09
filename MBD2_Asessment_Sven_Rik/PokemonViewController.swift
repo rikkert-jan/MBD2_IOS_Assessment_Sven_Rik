@@ -44,8 +44,8 @@ class PokemonViewController: UIViewController {
         }
     }
     
+    // Genereerd een whatsapp-bericht gebasseerd op je NSUserDefaults
     @IBAction func sendDataTapped(sender : AnyObject) {
-        print("you tapped ze button")
         var urlString = "Data generated with pokemon app for pokemon \(self.name); \n"
         
         if(defaults.boolForKey("showId")){
@@ -55,7 +55,7 @@ class PokemonViewController: UIViewController {
             urlString+=" Name: \(self.name) \n"
         }
         if(defaults.boolForKey("showHeight")){
-            urlString+=" Height: \(self.height)"
+            urlString+=" Height: \(self.height) \n"
         }
         if(defaults.boolForKey("showWeight")){
             urlString+=" Weight: \(self.weight) \n"
@@ -64,9 +64,11 @@ class PokemonViewController: UIViewController {
             urlString+=" Exp.: \(self.experience) \n"
         }
         
+        // Encode het bericht
         let urlStringEncoded = urlString.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())
         let url  = NSURL(string: "whatsapp://send?text=\(urlStringEncoded!)")
         
+        // Open whatsapp met het bericht
         if UIApplication.sharedApplication().canOpenURL(url!) {
             UIApplication.sharedApplication().openURL(url!)
         }

@@ -44,10 +44,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
+    // Hoeveel secties onze tabel heeft
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
     
+    // Hoeveel rijen er nodig zijn
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return pokemons.count
     }
@@ -78,14 +80,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
-    // Wanneer een pokemon geselecteerd
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        
-        let row = indexPath.row
-        print(pokemons[row].name)
-    }
-    
     // Vangt alle pokemon, om ze zo te kunnen onderzoeken!
     func gottaCatchEmAll(offSet:Int){
         let max = 30;
@@ -105,7 +99,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
                     // Als het request geslaagd is
                     if (statusCode == 200) {
-                        print("The pokemon have happily gathered around you, you are now the Pokemon Master!")
                 
                         do{
                             // probeer de JSON op te halen
@@ -139,9 +132,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             // Start de task
             task.resume()
         }
-        else{
-            print("Max reached, offest = \(offset)")
-        }
     }
     
     // Onderzoekt een pokemon zodat we de gegevens van die pokemon kunnen updaten in onze pokedex!
@@ -173,7 +163,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                             dispatch_async(dispatch_get_main_queue()) {
                                 self.tableView.reloadData()
                             }
-                            print("\(pokemon.name) - \(pokemon.id)")
                         }
                     
                     }catch {
