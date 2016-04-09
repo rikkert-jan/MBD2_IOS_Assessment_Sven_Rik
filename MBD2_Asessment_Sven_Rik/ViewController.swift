@@ -24,7 +24,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
-        gottaCatchEmAll()
+        gottaCatchEmAll(0)
     }
     
     //New
@@ -85,53 +85,68 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
         let row = indexPath.row
-        print(pokemons[row].name)
+        //print(pokemons[row].name)
     }
     
     // Fetches a list of pokemons from tha interwebz
-    func gottaCatchEmAll(){
-        let requestURL: NSURL = NSURL(string: "http://pokeapi.co/api/v2/pokemon?limit=30")!
-        let urlRequest: NSMutableURLRequest = NSMutableURLRequest(URL: requestURL)
-        let session = NSURLSession.sharedSession()
-        let task = session.dataTaskWithRequest(urlRequest) {
-            (data, response, error) -> Void in
+    func gottaCatchEmAll(offSet:Int){
+        let max = 9;
+        /*
+            5 per step werkt redelijk soepel, lichte hapering
+            3 per step werkt beter
+        */
+        let step = 3;
+        let offset = 0 + offSet;
+        
+        if (offset <= max){
+            let requestURL: NSURL = NSURL(string: "http://pokeapi.co/api/v2/pokemon?limit=\(step)&offset=\(offset)")!
+            let urlRequest: NSMutableURLRequest = NSMutableURLRequest(URL: requestURL)
+            let session = NSURLSession.sharedSession()
+            let task = session.dataTaskWithRequest(urlRequest) {
+                (data, response, error) -> Void in
             
-            let httpResponse = response as! NSHTTPURLResponse
-            let statusCode = httpResponse.statusCode
+                if let httpResponse = response as! NSHTTPURLResponse!{
+                let statusCode = httpResponse.statusCode
             
-            // Als het request geslaagd is
-            if (statusCode == 200) {
-                print("The pokemon have happily gathered around you, you are now the Pokemon Master!")
+                // Als het request geslaagd is
+                if (statusCode == 200) {
+                    print("The pokemon have happily gathered around you, you are now the Pokemon Master!")
                 
-                do{
-                    // probeer de JSON op te halen
-                    let json = try NSJSONSerialization.JSONObjectWithData(data!, options:.AllowFragments)
+                    do{
+                        // probeer de JSON op te halen
+                        let json = try NSJSONSerialization.JSONObjectWithData(data!, options:.AllowFragments)
                     
-                    // Kijk of er wel pokemons in de response zitten
-                    if let pokemonResults = json["results"] as? [[String: AnyObject]] {
+                        // Kijk of er wel pokemons in de response zitten
+                        if let pokemonResults = json["results"] as? [[String: AnyObject]] {
                         
-                        // Voeg voor elke pokemon in de rspons een Pokemon object toe met de naam
-                        for pokemonResult in pokemonResults {
-                            let name = pokemonResult["name"] as! String
-                            let pokemonInstance = Pokemon(name: name)
+                            // Voeg voor elke pokemon in de rspons een Pokemon object toe met de naam
+                            for pokemonResult in pokemonResults {
+                                let name = pokemonResult["name"] as! String
+                                let pokemonInstance = Pokemon(name: name)
                             
-                            self.pokemons.append(pokemonInstance)
-                            self.IChooseYou(pokemonInstance)
+                                self.pokemons.append(pokemonInstance)
+                                self.IChooseYou(pokemonInstance)
+                            }
+                            // Het asynchrone ophaalwerk zit er op, dus nu moeten we de data opnieuw binden
+                            dispatch_async(dispatch_get_main_queue()) {
+                                self.tableView.reloadData()
+                                self.gottaCatchEmAll(offSet + step)
+                            }
                         }
-                        // Het asynchrone ophaalwerk zit er op, dus nu moeten we de data opnieuw binden
-                        dispatch_async(dispatch_get_main_queue()) {
-                            self.tableView.reloadData()
-                        }
-                    }
                     
-                }catch {
-                    print("There seems to be a problem... all pokemon fled: \(error)")
-                }
+                    }catch {
+                        print("There seems to be a problem... all pokemon fled: \(error)")
+                    }
                 
+                }
             }
-        }
+            }
         // Start de task
         task.resume()
+        }
+        else{
+            print("Max reached, offest = \(offset)")
+        }
     }
     
     
@@ -142,8 +157,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let task = session.dataTaskWithRequest(urlRequest) {
             (data, response, error) -> Void in
             
-            let httpResponse = response as! NSHTTPURLResponse
+            if let httpResponse = response as! NSHTTPURLResponse! {
             let statusCode = httpResponse.statusCode
+                
             
             // Als het request geslaagd is
             if (statusCode == 200) {
@@ -162,12 +178,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                         dispatch_async(dispatch_get_main_queue()) {
                             self.tableView.reloadData()
                         }
+                        print("\(pokemon.name) - \(pokemon.id)")
                     }
                     
                 }catch {
                     print("There seems to be a problem... the pokemon fainted: \(error)")
                 }
             }
+            else{
+                print("could not load data for pokemon: \(pokemon.name)");
+            }
+        }
         }
         // Start de task
         task.resume()
